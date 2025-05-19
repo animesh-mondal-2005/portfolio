@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animesh Mondal | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7f5af0;
+      --secondary: #2cb67d;
+      --background: #16161a;
+      --surface: #242629;
+      --text: #fffffe;
+      --muted: #94a1b2;
+      --accent: #f5c518;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 0;
+    }
+    header {
+      background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+      color: var(--text);
+      padding: 80px 0 60px 0;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(127,90,240,0.15);
+      border-radius: 0 0 40px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 60px;
+      background: url('https://svgshare.com/i/11rG.svg') repeat-x;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    header p {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 13px 32px;
+      background: var(--background);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 30px;
+      border: 2px solid var(--primary);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      transition: all 0.3s cubic-bezier(.4,2,.3,1);
+      box-shadow: 0 2px 12px rgba(127,90,240,0.08);
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--primary);
+      color: var(--text);
+      border-color: var(--secondary);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 24px rgba(44,182,125,0.15);
+    }
+    section {
+      padding: 60px 0;
+      background: var(--surface);
+      margin: 40px 0;
+      border-radius: 20px;
+      box-shadow: 0 4px 32px rgba(44,182,125,0.05);
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: none;}
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .about p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .skills li {
+      background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+      color: var(--text);
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(127,90,240,0.08);
+      transition: transform 0.2s;
+      margin-bottom: 10px;
+      border: 2px solid transparent;
+    }
+    .skills li:hover {
+      transform: scale(1.08) rotate(-2deg);
+      border-color: var(--accent);
+      cursor: pointer;
+    }
+    .projects .project {
+      margin: 30px auto;
+      padding: 28px 32px;
+      background: var(--background);
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(127,90,240,0.10);
+      max-width: 600px;
+      transition: box-shadow 0.3s;
+      border-left: 6px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+    .projects .project h3 {
+      color: var(--secondary);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .projects .project p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+    .projects .project a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s;
+      border-bottom: 1px solid var(--accent);
+    }
+    .projects .project a:hover {
+      color: var(--primary);
+      border-bottom: 1px solid var(--primary);
+    }
+    .resume p {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .resume a {
+      color: var(--secondary);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--secondary);
+      transition: color 0.2s;
+    }
+    .resume a:hover {
+      color: var(--primary);
+      border-bottom: 1px solid var(--primary);
+    }
+    .contact form {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: var(--background);
+      padding: 32px 28px;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(44,182,125,0.10);
+    }
+    .contact input, .contact textarea {
+      background: #232526;
+      color: var(--text);
+      border: 1.5px solid var(--surface);
+      border-radius: 8px;
+      padding: 13px;
+      font-size: 1rem;
+      transition: border 0.2s;
+      outline: none;
+    }
+    .contact input:focus, .contact textarea:focus {
+      border: 1.5px solid var(--primary);
+    }
+    .contact button {
+      background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+      color: var(--text);
+      border: none;
+      border-radius: 30px;
+      padding: 13px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(127,90,240,0.08);
+    }
+    .contact button:hover {
+      background: var(--accent);
+      color: var(--background);
+      transform: translateY(-2px) scale(1.03);
+    }
+    footer {
+      text-align: center;
+      padding: 22px 0;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 1rem;
+      border-radius: 30px 30px 0 0;
+      margin-top: 40px;
+      letter-spacing: 1px;
+    }
+    /* Responsive */
+    @media (max-width: 800px) {
+      .container { width: 98%; }
+      section { padding: 35px 0;}
+      header { padding: 60px 0 40px 0;}
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem;}
+      h2 { font-size: 1.3rem;}
+      .skills ul { gap: 10px;}
+      .projects .project { padding: 18px 10px;}
+      .contact form { padding: 18px 8px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hi, I'm Animesh Mondal</h1>
+    <p>Software Developer | C | C++ | Java | Python | React</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </header>
+
+  <section class="about container">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate developer with a strong foundation in both front-end and back-end technologies. I love building responsive web applications, solving real-world problems, and continuously learning new tools and frameworks. My goal is to create impactful digital experiences that delight users and make a difference.
+    </p>
+  </section>
+
+  <section class="skills container">
+    <h2>Skills</h2>
+    <ul>
+      <li>C</li>
+      <li>C++</li>
+      <li>Java</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Python</li>
+      <li>Node.js</li>
+    </ul>
+  </section>
+
+  <section class="projects container" id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio website to showcase my skills and projects.</p>
+      <a href="https://github.com/animesh-mondal-2005" target="_blank">GitHub &rarr;</a>
+    </div>
+  </section>
+
+  <section class="resume container">
+    <h2>Resume</h2>
+    <p>Download my resume <a href="portfolio/Animesh_Resume.pdf" target="_blank">here</a>.</p>
+  </section>
+
+  <section class="contact container">
+    <h2>Contact</h2>
+    <form action="#">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Animesh Mondal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
